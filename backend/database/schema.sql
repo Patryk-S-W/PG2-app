@@ -38,8 +38,8 @@ CREATE TABLE projects(
   pkey VARCHAR(10), --- what's this for?
   --- members TEXT [], --- delete?
   description VARCHAR(255),
-  start_time TIMESTAMP WITH TIME ZONE UNIQUE, --- na pewno UNIQUE?
-  end_time TIMESTAMP WITH TIME ZONE UNIQUE, --- na pewno UNIQUE?
+  start_time TIMESTAMP WITH TIME ZONE,
+  end_time TIMESTAMP WITH TIME ZONE,
 
 	CONSTRAINT fk_supervisor
 		FOREIGN KEY(supervisor_id)
@@ -68,7 +68,7 @@ CREATE TABLE comments(
 	cid SERIAL PRIMARY KEY,
 	pid SERIAL,
 	uid SERIAL,
-	time TIMESTAMP WITH TIME ZONE UNIQUE, --- na pewno UNIQUE?
+	time TIMESTAMP WITH TIME ZONE,
 	content VARCHAR(255),
 
 	CONSTRAINT fk_project
@@ -82,7 +82,7 @@ CREATE TABLE comments(
 CREATE TABLE raports(
 	rid SERIAL PRIMARY KEY,
 	pid SERIAL,
-	time_submitted TIMESTAMP WITH TIME ZONE UNIQUE, --- na pewno UNIQUE?
+	time_submitted TIMESTAMP WITH TIME ZONE,
 	file_path VARCHAR(255), --- ścieżka do pliku na dysku? możliwe, że zrobię to inaczej
 
 	CONSTRAINT fk_project

@@ -42,6 +42,7 @@ app.get('/raports/project/:pid', db.getRaportsByProject);
 // TODO: dodawanie raportu do projektu plus zapisanie na dysku (multer) - patrz stary projekt
 
 // api routes
+app.use('/uploads', require('./uploads/uploads.controller'));
 app.use('/users', require('./users/users.controller'));
 
 app.get('/', (request, response) => {
