@@ -10,19 +10,21 @@
 
 .logo {
     font-family: Oswald, sans-serif;
-    font-size: 36px;
+    font-size: 55px;
     color: rgb(255, 255, 255);
-    margin-bottom: 40px
+    margin-bottom: 45px
 }
+
 .logo-small {
     font-family: Oswald, sans-serif;
     font-size: 20px;
     color: rgb(255, 255, 255);
-    margin-bottom: 30px
+    margin-bottom: 35px
 }
 
 .logo-smaller {
     font-family: Oswald, sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     color: rgb(255, 255, 255);
+    max-width: 90%;
 }

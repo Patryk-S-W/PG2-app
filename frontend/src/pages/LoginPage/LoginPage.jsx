@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
+import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 
-import { logowrapper, logo, logoSmall, logoSmaller } from './LoginPage.css';
+import LogoInfo from '@/components/LogoInfo';
 
 class LoginPage extends React.Component {
 	render() {
@@ -10,22 +10,7 @@ class LoginPage extends React.Component {
 				<Grid.Column width={8} color="blue">
 					<Grid textAlign="center" verticalAlign="middle" style={{ height: '100vh' }}>
 						<Grid.Column>
-							<div className={logowrapper}>
-								<span className={logo} title="Projekty Grupowe Politechniki Gdańskiej">
-									PG²
-								</span>
-								<span className={logoSmall} title="Projekty Grupowe Politechniki Gdańskiej">
-									Projekty Grupowe Politechniki Gdańskiej
-								</span>
-								<div className={logoSmaller}>
-									Projekty Grupowe Politechniki Gdańskiej to system umożliwiający zarządzanie
-									projektami grupowymi na wydziale Fizyki Technicznej i Matematyki Stosowanej.
-								</div>
-								<div className={logoSmaller}>
-									Pozwala opiekunom, kierownikom projektów, studentom, a także firmom na łatwe
-									zarządzanie projektami i generowanie raportów.
-								</div>
-							</div>
+							<LogoInfo />
 						</Grid.Column>
 					</Grid>
 				</Grid.Column>
