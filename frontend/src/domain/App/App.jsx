@@ -2,8 +2,9 @@ import React from 'react';
 import { Switch, Router, Route } from 'react-router-dom';
 import importedComponent from 'react-imported-component';
 
-import HomePage from '@/pages/HomePage';
 import Loading from '@/components/Loading';
+import HomePage from '@/pages/HomePage';
+import LoginPage from '@/pages/LoginPage';
 
 import { history } from '@/helpers';
 
@@ -18,6 +19,7 @@ class App extends React.Component {
 				<div>
 					<Switch>
 						<Route exact path="/" component={HomePage} />
+						<Route exact path="/login" component={LoginPage} />
 						<Route component={AsyncNoMatch} />
 					</Switch>
 				</div>
