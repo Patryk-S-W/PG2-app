@@ -5,6 +5,7 @@ import importedComponent from 'react-imported-component';
 import Loading from '@/components/Loading';
 import HomePage from '@/pages/HomePage';
 import LoginPage from '@/pages/LoginPage';
+import RegisterPage from '@/pages/RegisterPage';
 
 import { history } from '@/helpers';
 
@@ -20,6 +21,7 @@ class App extends React.Component {
 					<Switch>
 						<Route exact path="/" component={HomePage} />
 						<Route exact path="/login" component={LoginPage} />
+						<Route exact path="/register" component={RegisterPage} />
 						<Route component={AsyncNoMatch} />
 					</Switch>
 				</div>
