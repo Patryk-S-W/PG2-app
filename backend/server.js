@@ -38,11 +38,9 @@ app.get('/comments/project/:pid', db.getCommentsByProjectId);
 
 app.get('/raports', db.getRaports);
 app.get('/raports/project/:pid', db.getRaportsByProject);
-// TODO: pobieranie pliku projektu (poprzednie powinny wysyłać tylko tyle danych by wyświetlić na stronie, po klliknięciu zostanie wysłane zapytanie tutaj)
-// TODO: dodawanie raportu do projektu plus zapisanie na dysku (multer) - patrz stary projekt
 
 // api routes
-app.use('/uploads', require('./uploads/uploads.controller'));
+app.use('/raports', require('./raports/raports.controller'));
 app.use('/users', require('./users/users.controller'));
 
 app.get('/', (request, response) => {

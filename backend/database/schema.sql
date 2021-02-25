@@ -36,7 +36,6 @@ CREATE TABLE projects(
   leader_id INTEGER,
   firm_id INTEGER,
   pkey VARCHAR(10), --- what's this for?
-  --- members TEXT [], --- delete?
   description VARCHAR(255),
   start_time TIMESTAMP WITH TIME ZONE,
   end_time TIMESTAMP WITH TIME ZONE,
@@ -83,7 +82,7 @@ CREATE TABLE raports(
 	rid SERIAL PRIMARY KEY,
 	pid SERIAL,
 	time_submitted TIMESTAMP WITH TIME ZONE,
-	file_path VARCHAR(255), --- ścieżka do pliku na dysku? możliwe, że zrobię to inaczej
+	file_name VARCHAR(255),
 
 	CONSTRAINT fk_project
 		FOREIGN KEY(pid)
@@ -141,3 +140,4 @@ GRANT SELECT, INSERT, UPDATE, DELETE
 ON ALL TABLES IN SCHEMA public
 TO admin;
 GRANT USAGE ON SEQUENCE users_uid_seq TO admin;
+GRANT USAGE ON SEQUENCE raports_rid_seq TO admin;
