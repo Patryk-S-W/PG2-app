@@ -141,3 +141,4 @@ ON ALL TABLES IN SCHEMA public
 TO admin;
 GRANT USAGE ON SEQUENCE users_uid_seq TO admin;
 GRANT USAGE ON SEQUENCE raports_rid_seq TO admin;
+GRANT USAGE ON SEQUENCE comments_cid_seq TO admin;
