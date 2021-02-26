@@ -24,9 +24,6 @@ const limiter = rateLimit({
 app.use(limiter)
 
 // TODO: przenieś ścieżki, dodaj authorize
-app.get('/users', db.getUsers);
-app.get('/users/project/:pid', db.getUsersByProject);
-
 app.get('/projects', db.getProjects);
 app.get('/projects/:pid', db.getProjectById);
 // TODO: dodawanie projektów

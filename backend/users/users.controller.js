@@ -1,10 +1,13 @@
 const express = require('express');
 const router = express.Router();
-// const Role = require('_helpers/role'); // TODO: implement _helpers/role
 const userService = require('./user.service');
 // const authorize = require('_helpers/authorize') // TODO: implement _helpers/authorize
+// const Role = require('_helpers/role'); // TODO: implement _helpers/role
 
 const db = require('../database/queries'); // IS THIS NEEDED HERE???
+
+router.get('/', db.getUsers);
+router.get('/project/:pid', db.getUsersByProject);
 
 router.post('/authenticate', authenticate);	// public route
 router.post('/register', register);					// public route
@@ -18,7 +21,6 @@ function authenticate(req, res, next) {
     .catch(err => next(err));
 }
 
-// TODO: rejestracja
 // TODO: rozgraniczenie rejestracji ze względu na rolę dodawanej osoby, autentykacja ze względu na rolę dodającego
 function register(req, res, next) {
 	userService.register({...req.body, role: "student"})
