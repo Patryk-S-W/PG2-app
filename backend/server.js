@@ -30,11 +30,9 @@ app.get('/projects/:pid', db.getProjectById);
 // TODO: dodawanie projektów
 // TODO: dodawanie użytkownika do projektu
 
-app.get('/comments', db.getComments);
-app.get('/comments/project/:pid', db.getCommentsByProjectId);
-// TODO: dodawanie komentarza do projektu
 
 // api routes
+app.use('/comments', require('./comments/comments.controller'));
 app.use('/projects', require('./projects/projects.controller'))
 app.use('/raports', require('./raports/raports.controller'));
 app.use('/users', require('./users/users.controller'));
