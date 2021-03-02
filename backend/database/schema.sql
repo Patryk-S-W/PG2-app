@@ -35,7 +35,6 @@ CREATE TABLE projects(
   supervisor_id INTEGER,
   leader_id INTEGER,
   firm_id INTEGER,
-  pkey VARCHAR(10), --- what's this for?
   description VARCHAR(255),
   start_time TIMESTAMP WITH TIME ZONE,
   end_time TIMESTAMP WITH TIME ZONE,
@@ -105,10 +104,10 @@ INSERT INTO users VALUES (DEFAULT, 'supervisor2', 'test11@mail.com', TRUE, NOW()
 INSERT INTO users VALUES (DEFAULT, 'firm1', 'test12@mail.com', TRUE, NOW(), NOW(), 'test', 'test', 'firm1', 'firm', 'Januszex', '1234567890');
 INSERT INTO users VALUES (DEFAULT, 'firm2', 'test13@mail.com', TRUE, NOW(), NOW(), 'test', 'test', 'firm2', 'firm', 'Jakaś firma', '1234567890');
 
-INSERT INTO projects VALUES (DEFAULT, 'project1', 'student', 10, 7, 12, NULL, 'A test project number 1', NOW(), NOW() + interval '1 year');
-INSERT INTO projects VALUES (DEFAULT, 'project2', 'leader', NULL, NULL, 13, NULL, 'A test project number 2', NOW(), NOW() + interval '1 year');
-INSERT INTO projects VALUES (DEFAULT, 'project3', 'supervisor', NULL, 9, NULL, NULL, 'A test project number 3', NOW(), NOW() + interval '1 year');
-INSERT INTO projects VALUES (DEFAULT, 'project4', 'firm', 10, NULL, NULL, NULL, 'A test project number 4', NOW(), NOW() + interval '1 year');
+INSERT INTO projects VALUES (DEFAULT, 'project1', 'student', 10, 7, 12, 'A test project number 1', NOW(), NOW() + interval '1 year');
+INSERT INTO projects VALUES (DEFAULT, 'project2', 'leader', NULL, NULL, 13, 'A test project number 2', NOW(), NOW() + interval '1 year');
+INSERT INTO projects VALUES (DEFAULT, 'project3', 'supervisor', NULL, 9, NULL, 'A test project number 3', NOW(), NOW() + interval '1 year');
+INSERT INTO projects VALUES (DEFAULT, 'project4', 'firm', 10, NULL, NULL, 'A test project number 4', NOW(), NOW() + interval '1 year');
 
 INSERT INTO users_have_projects VALUES (1, 1);
 INSERT INTO users_have_projects VALUES (2, 1);
@@ -141,3 +140,5 @@ ON ALL TABLES IN SCHEMA public
 TO admin;
 GRANT USAGE ON SEQUENCE users_uid_seq TO admin;
 GRANT USAGE ON SEQUENCE raports_rid_seq TO admin;
+GRANT USAGE ON SEQUENCE projects_pid_seq TO admin;
+
