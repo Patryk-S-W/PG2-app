@@ -23,20 +23,17 @@ const limiter = rateLimit({
 
 app.use(limiter)
 
-// TODO: przenieś ścieżki, dodaj authorize
-app.get('/users', db.getUsers);
-app.get('/users/project/:pid', db.getUsersByProject);
 
+// TODO: przenieś ścieżki, dodaj authorize
 app.get('/projects', db.getProjects);
 app.get('/projects/:pid', db.getProjectById);
 // TODO: dodawanie projektów
 // TODO: dodawanie użytkownika do projektu
 
-app.get('/raports', db.getRaports);
-app.get('/raports/project/:pid', db.getRaportsByProject);
 
 // api routes
 app.use('/comments', require('./comments/comments.controller'));
+app.use('/projects', require('./projects/projects.controller'))
 app.use('/raports', require('./raports/raports.controller'));
 app.use('/users', require('./users/users.controller'));
 

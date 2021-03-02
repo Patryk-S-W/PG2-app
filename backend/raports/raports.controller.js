@@ -18,7 +18,10 @@ const storage = multer.diskStorage({
 	}
 })
 
+router.get('/', db.getRaports);
+router.get('/project/:pid', db.getRaportsByProject);
 router.get('/id/:rid', getRaportFileById);
+
 router.post('/upload', fileUpload);
 router.post('/raport', addRaportToProject);
 
